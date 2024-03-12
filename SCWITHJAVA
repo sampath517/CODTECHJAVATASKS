@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            // Display menu
+            System.out.println("Choose an operation:"); // Prompting the user to choose an operation
+            System.out.println("1. Addition"); // Option 1: Addition
+            System.out.println("2. Subtraction"); // Option 2: Subtraction
+            System.out.println("3. Multiplication"); // Option 3: Multiplication
+            System.out.println("4. Division"); // Option 4: Division
+            System.out.println("5. Exponentiation"); // Option 5: Exponentiation
+            System.out.println("6. Quit"); // Option 6: Quit
+            System.out.print("Enter your choice: "); // Prompting the user to enter their choice
+            
+            // Read user choice
+            int choice = scanner.nextInt(); // Reading the user's choice
+            
+            // Perform operation based on user choice
+            switch (choice) {
+                case 1:
+                    addition(scanner); // Call addition method
+                    break;
+                case 2:
+                    subtraction(scanner); // Call subtraction method
+                    break;
+                case 3:
+                    multiplication(scanner); // Call multiplication method
+                    break;
+                case 4:
+                    division(scanner); // Call division method
+                    break;
+                case 5:
+                    exponentiation(scanner); // Call exponentiation method
+                    break;
+                case 6:
+                    System.out.println("Exiting calculator. Goodbye!"); // Quitting the program
+                    System.exit(0); // Exiting the program
+                default:
+                    System.out.println("Invalid choice. Please try again."); // Handling invalid input
+            }
+        }
+    }
+    
+    // Method to perform addition
+    private static void addition(Scanner scanner) {
+        System.out.print("Enter first number: "); // Prompting the user to enter the first number
+        double num1 = scanner.nextDouble(); // Reading the first number
+        System.out.print("Enter second number: "); // Prompting the user to enter the second number
+        double num2 = scanner.nextDouble(); // Reading the second number
+        double result = num1 + num2; // Performing addition
+        System.out.println("Result: " + result); // Displaying the result
+    }
+    
+    // Method to perform subtraction
+    private static void subtraction(Scanner scanner) {
+        System.out.print("Enter first number: "); // Prompting the user to enter the first number
+        double num1 = scanner.nextDouble(); // Reading the first number
+        System.out.print("Enter second number: "); // Prompting the user to enter the second number
+        double num2 = scanner.nextDouble(); // Reading the second number
+        double result = num1 - num2; // Performing subtraction
+        System.out.println("Result: " + result); // Displaying the result
+    }
+    
+    // Method to perform multiplication
+    private static void multiplication(Scanner scanner) {
+        System.out.print("Enter first number: "); // Prompting the user to enter the first number
+        double num1 = scanner.nextDouble(); // Reading the first number
+        System.out.print("Enter second number: "); // Prompting the user to enter the second number
+        double num2 = scanner.nextDouble(); // Reading the second number
+        double result = num1 * num2; // Performing multiplication
+        System.out.println("Result: " + result); // Displaying the result
+    }
+    
+    // Method to perform division
+    private static void division(Scanner scanner) {
+        System.out.print("Enter dividend: "); // Prompting the user to enter the dividend
+        double dividend = scanner.nextDouble(); // Reading the dividend
+        System.out.print("Enter divisor: "); // Prompting the user to enter the divisor
+        double divisor = scanner.nextDouble(); // Reading the divisor
+        if (divisor == 0) { // Checking for division by zero
+            System.out.println("Error! Division by zero is not allowed."); // Displaying error message
+        } else {
+            double result = dividend / divisor; // Performing division
+            System.out.println("Result: " + result); // Displaying the result
+        }
+    }
+    
+    // Method to perform exponentiation
+    private static void exponentiation(Scanner scanner) {
+        System.out.print("Enter base: "); // Prompting the user to enter the base
+        double base = scanner.nextDouble(); // Reading the base
+        System.out.print("Enter exponent: "); // Prompting the user to enter the exponent
+        double exponent = scanner.nextDouble(); // Reading the exponent
+        double result = Math.pow(base, exponent); // Performing exponentiation
+        System.out.println("Result: " + result); // Displaying the result
+    }
+}
